@@ -16,7 +16,6 @@ def get_sum():
     with open("/tcdata/num_list.csv", "r") as f:
         for line in f:
             current = line.rstrip()
-            # print(current)
             count = int(current) + count
     return count
 
@@ -27,29 +26,26 @@ def get_sum():
 def get_max():
     file_list = []
     result_list = []
-    min_num = 0
     with open("/tcdata/num_list.csv", "r") as f:
         for line in f:
-            if line in file_list:
-                continue
-            else:
-                file_list.append(int(line))
-
+            file_list.append(int(line))
+    print(file_list)
     length = 10
     if int(len(file_list)) < 10:
         length = int(len(file_list))
 
     for i in range(length):
-        current_max = 0
-        for current in file_list:
-            if current in result_list:
-                continue
-            if current > current_max:
-                current_max = current
-        if current_max == 0:
+        index = 0
+        for i in range(len(file_list)):
+            if file_list[i] > file_list[index]:
+                index = i
+        if file_list[index] == 0:
             break
         else:
-            result_list.append(current_max)
+            result_list.append(file_list[index])
+            file_list[index] = 0
+    print(result_list)
+
     return result_list
 
 

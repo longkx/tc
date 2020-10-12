@@ -1,0 +1,23 @@
+# This is a sample Python script.
+import json
+
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def print_hi():
+    # Use a breakpoint in the code line below to debug your script.
+    # print('Hello world')  # Press Ctrl+F8 to toggle the breakpoint.
+    return 'Hello world'
+
+
+# Press the green button in the gutter to run the script.
+# print(__name__)
+
+if __name__ == '__main__':
+    Q1 = print_hi()
+    result = {'Q1': Q1}
+    resultStr = json.dumps(result, sort_keys=True, indent=4, separators=(',', ':'))
+    print(resultStr)
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/

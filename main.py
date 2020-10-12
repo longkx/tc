@@ -16,15 +16,14 @@ def print_hi():
 
 if __name__ == '__main__':
     Q1 = print_hi()
-    result = {'Q1': Q1}
-    resultStr = json.dumps(result, sort_keys=True, indent=4, separators=(',', ':'))
-    print(resultStr)
+    result = {
+        'Q1': Q1
+    }
+    # resultStr = json.dumps(result, sort_keys=True, indent=4, separators=(',', ':'))
+    # print(resultStr)
 
     # 打开一个文件
-    fo = open("result.json", "w")
-    fo.write(resultStr)
-
-    # 关闭打开的文件
-    fo.close()
+    with open("result.json", "w") as f:
+        json.dump(result, f)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
